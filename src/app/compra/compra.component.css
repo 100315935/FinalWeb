@@ -1,0 +1,27 @@
+.col-12{
+    padding: 3rem;
+    background-color: var(--color-menu-bg)
+}
+
+.asientos{
+    margin-left: 0rem;
+    margin-right: 0rem;
+    padding-left: 2rem;
+}
+
+.panel{
+    border: solid 0.2rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+.butaca{
+    height: 2rem;
+    border-top-right-radius: 0.5em;
+    border-top-left-radius: 0.5rem;
+    width: 2rem; 
+    border: solid 0.1rem;
+    margin: 0.2rem;
+    text-align: center;
+}
+

@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>{{oGrupo.title}}</h1>
+      <p>{{oGrupo.description}}</p>
+      <h1>Producciones pasadas</h1>
+    </div>
+    <div class="card-deck" *ngFor="let obra of aObras">
+      <div class="card">
+        <img class="card-img" src='../../assets/{{obra.img}}' alt="card">
+        <div class="card-body">
+          <a [routerLink]="['./obras', obra.nav]">
+            <h5 class="card-title">{{obra.title}}</h5>
+          </a>
+          <p class="card-text">
+            <small class="text-muted">{{obra.date}}</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

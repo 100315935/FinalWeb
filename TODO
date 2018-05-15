@@ -1,0 +1,52 @@
+Vistas del proceso de compra ():
+- Elegir dia y hora de representación
+- Elegir asientos
+    - Como hacer el grid de asientos
+    - Mostrar
+- Resumen de la compra con toda la info/ Meter los datos personales
+
+Vista de usuario para editar tu información:
+    - Cambiar el correo
+    - Cambiar la cuenta de pago
+    - Cambiar la contraseña
+
+    -Mostrar lista de compras abajo
+
+Vista de administrador:
+    - Editar información de obras y grupos
+    - Editar la obra en cartelera:
+        - Añadir/ quitar dias
+        - Modificar horas
+        - Modificar precio
+        - Bloquear entradas
+        - Vender entradas artificialmente (Para taquilla)        
+
+BACKEND:
+    -Guardar
+        - los datos de los usuarios
+            -Log info 
+            -Info de pago
+        -Informacion de las obras(?)
+        -Venta de entradas
+    - Servicios:
+        - Entradas libres, ocupadas, vendidas
+        - TIMEOUT DE UN USUARIO(?)--> Backend
+        -Log in
+        -s
+        -Obtener información de las obras(?)
+
+Elementos extra:
+    - Generar PDF de Entradas
+    - Mapa de google maps
+
+Una vez esté eso:
+    - PONERLO BONITO CON CSS
+
+Si da tiempo:
+    - Comentarios
+    - Pdf's de programas de mano
+
+-Preguntar a Teresa:
+    -(?)
+    - Como diferenciar usuario logeado de usuario administrador
+    - Como se sube la página a un servidor/ obtiene una url?

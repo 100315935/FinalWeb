@@ -1,0 +1,47 @@
+<div class="headerWrapper">
+  <div class="navbar navbar-expand-sm navbar-light header max-width">
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      </ul>
+      <div class="form-inline my-2 my-lg-0">
+        <button type="button" name="login" class="btn btn-outline-light btn-borderless my-2 my-sm-0 m-2" (click)="show()">Iniciar sesión</button>
+        <button type="button" name="register" class="btn btn-outline-light btn-borderless my-2 my-sm-0 m-2">Registrarse</button>
+      </div>
+    </div>
+  </div>
+  <div class="titulo">
+    <!-- <img class="logo" src=""> -->
+    <a href="/" class="td-none">
+      <h1 class="font-title" href="#">Teatro del Pilar</h1>
+    </a>
+  </div>
+</div>
+
+<!-- Modal de hacer login -->
+<div id="evento_pop_up" class="modal animate" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form>
+          <span (click)="hide()" class="close" title="Close Modal">
+            <i class='fa fa-times'></i>
+          </span>
+          <div class="container">
+            <label for="usuario">
+              <b>Usuario</b>
+            </label>
+            <input type="text" placeholder="Usuario" name="usuario" required>
+            <label for="psw">
+              <b>Contraseña</b>
+            </label>
+            <input type="password" placeholder="Contraseña" name="psw" required>
+            <button type="submit">Entrar</button>
+            <label>
+              <input type="checkbox" name="remember"> Recuerdame
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+.container{
+    padding: 3rem;
+    background-color: var(--color-menu-bg)
+}
+.card-img{
+    width: 200px;
+    height: 100px;
+}

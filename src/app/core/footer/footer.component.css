@@ -1,0 +1,10 @@
+.footerWrapper {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--color-bg-global);
+    color: var(--color-header-text);
+}
+
+.footer {
+    padding: 15px 0px 15px 0px;
+}

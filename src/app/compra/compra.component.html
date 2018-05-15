@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Proceso de compra</h1>
+      <div class="card" *ngIf="proceso === 1">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100"></div>
+        </div>
+        <div class="form">
+          <div class="card-header">
+            Elige el día y la hora
+          </div>
+          <div class="card-body">
+            <ul class="list-group">Dias y horas de representaciones:
+              <li class="list-group-item" *ngFor="let option of infoObra.representaciones">
+                <input type="radio" [value]="option" [(ngModel)]="rep_elegida" (change) ="elegido()">&nbsp;{{option.date}} a las {{option.hour}}</li>
+            </ul>
+            <button type="submit" class="btn btn-secondary" (click)="avanzar()">Siguiente</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" *ngIf="proceso === 2">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+            aria-valuemax="100"></div>
+        </div>
+        <div class="card-header">
+          Elige tus asientos
+        </div>
+        <div class="card-body">
+            <div class= "row">
+                <div class="col-4"><button class="btn btn-primary butaca"></button><small>Libres</small></div>
+                <div class="col-4"><button class="btn btn-danger butaca"></button><small>Vendidas</small></div>
+                <div class="col-4"><button class="btn btn-secondary butaca"></button><small>No disponibles</small></div>
+              </div>
+          <div class="panel">
+            <div class="panel-body">Escenario</div>
+          </div>
+          <br>
+          <div class="asientos">
+              <table class="table-responsive">
+                  <tbody>
+                    <tr *ngFor="let num of rep_elegida.asientos_left.number_rows" >
+                      <th scope="row">{{num}}</th>
+                      <td *ngFor="let one of rowsOfColumn(rep_elegida.asientos_left.rows,num)">
+                          <button class="btn-primary butaca" *ngIf="one.state === 'L'" (click)="elegir(one)"><small>{{one.col}}</small></button>
+                          <button class="btn-danger butaca" *ngIf="one.state === 'V'" disabled><small>{{one.col}}</small></button>
+                          <button class="btn-secondary butaca" *ngIf="one.state === 'B'"disabled><small>{{one.col}}</small></button>
+                          <button class="btn-success butaca" *ngIf="one.state === 'C'" (click)="liberar(one)"><small>{{one.col}}</small></button>
+                      </td>
+                      <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                      <td *ngFor="let one of rowsOfColumn(rep_elegida.asientos_right.rows,num)">
+                          <button class="btn-primary butaca" *ngIf="one.state === 'L'" (click)="elegir(one)"><small>{{one.col}}</small></button>
+                          <button class="btn-danger butaca" *ngIf="one.state === 'V'" disabled><small>{{one.col}}</small></button>
+                          <button class="btn-secondary butaca" *ngIf="one.state === 'B'"disabled><small>{{one.col}}</small></button>
+                          <button class="btn-success butaca" *ngIf="one.state === 'C'" (click)="liberar(one)"><small>{{one.col}}</small></button><!--  -->
+                      </td>
+                      <th scope="row">{{num}}</th>
+                    </tr>
+                  </tbody>
+                </table>
+          <br>
+          <button class="btn btn-secondary" (click)="volver()">Volver</button>
+          <button class="btn btn-secondary" (click)="avanzar()">Siguiente</button>
+        </div>
+      </div>
+      </div>
+
+
+      <div class="card" *ngIf="proceso === 3">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+            aria-valuemax="100"></div>
+        </div>
+        <div class="card-header">
+          Confirma tu elección
+        </div>
+        <div class="card-body">
+          <b>Día:</b>
+          <p>{{rep_elegida.date}} a las {{rep_elegida.hour}}</p>
+          <b>Asientos:</b>
+          <ul *ngFor="let asiento of as_elegido"><li>Fila: {{asiento.row}}, asiento: {{asiento.col}}</li></ul>
+          <p>Información de usuario</p>
+          <button class="btn btn-secondary" (click)="volver()">Volver</button>
+          <button class="btn btn-secondary" (click)="avanzar()">Siguiente</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
